@@ -15,7 +15,7 @@ class NotesViewBody extends StatelessWidget {
           SizedBox(
             height: 45,
           ),
-          CustomAppBar(),
+          CustomAppBar(title: 'Notes', icon: Icons.search),
           Expanded(
             child: NotesListView(),
           ), //Expanded inside Row or column this is flex widget
