@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:meta/meta.dart';
 import 'package:notes_hive_app/constant.dart';
 import 'package:notes_hive_app/models/note_model.dart';
 
