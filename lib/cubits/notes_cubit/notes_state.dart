@@ -18,3 +18,5 @@ class NotesInitialState extends NotesState {}
 
 //   NotesFailureState({required this.errorMessage});
 // }
+
+class NotesSuccessState extends NotesState {}
