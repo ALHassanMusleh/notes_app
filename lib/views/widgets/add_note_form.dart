@@ -50,7 +50,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
           const SizedBox(
             height: 35,
           ),
-          ColorsListView(),
+          const ColorsListView(),
           const SizedBox(
             height: 35,
           ),
@@ -71,7 +71,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                       title: title!,
                       subTitle: subTitle!,
                       date: formatCurrenState,
-                      color: Colors.blue.value,
+                      color: BlocProvider.of<AddNoteCubit>(context).color.value,
                     );
 
                     BlocProvider.of<AddNoteCubit>(context).addNote(note);
