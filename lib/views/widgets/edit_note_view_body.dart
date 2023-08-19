@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:notes_hive_app/constant.dart';
 import 'package:notes_hive_app/cubits/notes_cubit/notes_cubit.dart';
+import 'package:notes_hive_app/helper/show_snack_bar.dart';
 import 'package:notes_hive_app/models/note_model.dart';
-import 'package:notes_hive_app/views/widgets/color_list_view.dart';
 import 'package:notes_hive_app/views/widgets/custom_app_bar.dart';
 import 'package:notes_hive_app/views/widgets/custom_text_field.dart';
 import 'package:notes_hive_app/views/widgets/edit_notes_color_listview.dart';
@@ -36,7 +35,8 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
               widget.note.title = title ?? widget.note.title;
               widget.note.subTitle = content ?? widget.note.subTitle;
               widget.note.save();
-
+              showSnackBar(context, 'Edit Note Succeffully',
+                  backgroundcolor: Colors.green);
               BlocProvider.of<NotesCubit>(context).fetchAllNotes();
 
               Navigator.pop(context);

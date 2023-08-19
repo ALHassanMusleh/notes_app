@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:notes_hive_app/cubits/add_note_cubit/add_note_cubit.dart';
+import 'package:notes_hive_app/helper/show_snack_bar.dart';
 import 'package:notes_hive_app/models/note_model.dart';
 import 'package:notes_hive_app/views/widgets/color_list_view.dart';
 import 'package:notes_hive_app/views/widgets/custom_button.dart';
@@ -73,6 +74,9 @@ class _AddNoteFormState extends State<AddNoteForm> {
                       date: formatCurrenState,
                       color: BlocProvider.of<AddNoteCubit>(context).color.value,
                     );
+
+                    showSnackBar(context, 'Added Note Succeffully',
+                        backgroundcolor: Colors.green);
 
                     BlocProvider.of<AddNoteCubit>(context).addNote(note);
                   } else {
